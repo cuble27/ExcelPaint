@@ -1,0 +1,69 @@
+body{
+   background: #262626;
+   text-align: center;
+   margin: 1px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   /*overflow: hidden;*/
+}
+
+#excelTable{
+   background: #421b00;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.row{
+   margin: 0;
+}
+
+.cell{
+   background: #2d3644;
+   width: 50px;
+   height: 50px;
+   margin: 1px;
+   display: inline-block;
+}
+
+.cell:hover{
+   box-shadow: 0 0 20px 0px white;
+   z-index: 1;
+}
+
+#colors{
+   left: 0;
+   top: 50px;
+   width: 60px;
+   position: absolute;
+   background: #2d3644;
+   color: white;
+}
+
+#red{
+   width: 50px;
+   height: 50px;
+   background: red;
+   margin: 5px;
+}
+
+#green{
+   width: 50px;
+   height: 50px;
+   background: green;
+   margin: 5px;
+}
+
+#blue{
+   width: 50px;
+   height: 50px;
+   background: blue;
+   margin: 5px;
+}
+
+#white{
+   width: 50px;
+   height: 50px;
+   background: white;
+   margin: 5px;
+}
