@@ -2,27 +2,29 @@
 window.onload = function(){
    var i= 0, j= 0;
 
-   var cellSize= 52;  //Wont work if you make it smaller, FIX IT!!!
+   var cellSize= 11;  //Wont work if you make it smaller, FIX IT!!!
 
    var cells = document.getElementsByClassName('cell');
    var colorSelected = "white";
-
    var tableSelector= document.getElementById("excelTable");
 
-   var widthOfTable= (innerWidth-120) - (innerWidth-120)%cellSize;
-   var heightOfTable= innerHeight - innerHeight % cellSize;
+   var widthOfTable= (innerWidth-130) - (innerWidth-130)%cellSize;
+   var heightOfTable= (innerHeight-cellSize) - (innerHeight-cellSize) % cellSize;
+   console.log("widthOfTable: " + widthOfTable + " heightOfTable: " + heightOfTable);
 
    tableSelector.style.maxWidth= widthOfTable+"px";
    tableSelector.style.maxHeiht= heightOfTable+"px";
+   tableSelector.style.marginTop= ((cellSize / 2) + (innerHeight%cellSize)/2) + "px";
 
-   tableSelector.style.marginTop= ((innerHeight%cellSize) / 2) + "px";
+   var nrOfCells= (widthOfTable / cellSize) * (heightOfTable / cellSize);
 
-// console.log((heightOfTable%cellSize) / 2);
+   var tableCells= [];
 
-   for(i= 0; i < (widthOfTable / cellSize) * (heightOfTable / cellSize); i++){
-      tableSelector.innerHTML += "<div class=\"cell\"></div>";
+   for(i= 0; i < nrOfCells; i++){
+      tableCells.push("<div class=\"cell\"></div>");
+      // tableSelector.innerHTML+= "<div class=\"cell\"></div>";
    }
-
+   tableSelector.innerHTML+= tableCells.join('');  //Putting the array that stores the cells in the table -- faster method than putting it in one by one.
 
    var changeColor = function(e){
       e = e || window.event;
@@ -30,9 +32,12 @@ window.onload = function(){
    };
 
    for (i= 0; i < cells.length; i++) {
-      console.log("dada");
       cells[i].addEventListener('click', changeColor, false);
    }
+
+   document.getElementById('white').onclick = function(){
+      colorSelected = "white";
+   };
 
    document.getElementById('red').onclick = function(){
       colorSelected = "red";
@@ -42,12 +47,21 @@ window.onload = function(){
       colorSelected = "green";
    };
 
-   document.getElementById('blue').onclick = function(){
-      colorSelected = "blue";
+   document.getElementById('yellow').onclick = function(){
+      colorSelected = "yellow";
    };
 
-   document.getElementById('white').onclick = function(){
-      colorSelected = "white";
+   document.getElementById('purple').onclick = function(){
+      colorSelected = "purple";
    };
+
+   document.getElementById('orange').onclick = function(){
+      colorSelected = "orange";
+   };
+
+   document.getElementById('cyan').onclick = function(){
+      colorSelected = "cyan";
+   };
+
 
 };
