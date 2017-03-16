@@ -5,11 +5,9 @@ body{
    display: flex;
    align-items: center;
    justify-content: center;
-   /*overflow: hidden;*/
 }
 
 #excelTable{
-   /*background: #421b00;*/
    background: #262626;
    align-self: center;
    display: flex;
@@ -21,15 +19,18 @@ body{
 }
 
 .cell{
-   background: white;
+   user-drag: none;
+   user-select: none;
+   background: gray;
    width: 10px;
    height: 10px;
-   margin: 0.5px;
+   /*margin: 1px; /*To be removed*/*/
    display: inline-block;
 }
 
 .cell:hover{
-   box-shadow: 0 0 20px 0px white;
+   /*border: 1px solid black;*/
+   box-shadow: inset 0px 0px 0px 1px #949494;
    z-index: 1;
 }
 
@@ -96,4 +97,22 @@ body{
    height: 50px;
    background: cyan;
    margin: 5px;
+}
+
+#eraseAll{
+   width: 50px;
+   height: 20px;
+   margin: 5px;
+   background: grey;
+   color: black;
+   font-weight: bold;
+}
+
+#undo{
+   width: 50px;
+   height: 20px;
+   margin: 5px;
+   background: grey;
+   color: black;
+   font-weight: bold;
 }
